@@ -1,0 +1,17 @@
+#if !defined(AREAS)
+#define AREAS
+
+//area cuadrado
+float cuadrado(const float& lado);
+//area triangulo
+float poligono(const float& perimetro, const float& apotema);
+//area rectangulo
+float rectangulo(const  float& base,const float& altura);
+//area rombo 
+float rombo(const float& d1,const float& d2);
+//area trapecio
+float trapecio(const float& bmayor, const float& bmenor, const float& altura);
+//area poligono
+float triangulo(const float& base,const float& altura);
+
+#endif

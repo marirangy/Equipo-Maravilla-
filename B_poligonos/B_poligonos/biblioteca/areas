@@ -1,0 +1,52 @@
+#if !defined(areas)
+#define areas
+
+/** @brief Calcula el area de un cuadrado 
+ * @param lado tamaño en cm de un lado del cuadrado
+ * @returns lado * lado
+ * @author 2213026676
+ */
+float cuadrado(const float& lado);
+
+/** @brief Calcula el area de un poligono 
+ * @param perimetro tamaño en cm del perimtro del poligono
+ * @param apotema Distancia entre el centro y uno de los lados del poligono
+ * @returns (perimetro*apotema)/2
+ * @author 2213026541
+ */
+float poligono(const float& perimetro, const float& apotema);
+
+/** @brief Calcula el area de un rectangulo
+ * @param base tamaño en cm de la base del rectangulo
+ * @param altura tamaño en cm de la altura del rectangulo
+ * @returns base*altura
+ * @author 2213026676 
+ */
+float rectangulo(const  float& base,const float& altura);
+
+/** @brief Calcula el area de un rombo
+ * @param d1 Diagonal mayor del rombo
+ * @param d2 Diagonal menor del rombo
+ * @returns (d1*d2)/2
+ * @author 2213026176
+ */
+float rombo(const float& d1,const float& d2);
+
+/** @brief Calcula el area de un trapecio
+ * @param bmayor Base de mayor tamaño del trapecio 
+ * @param bmenor Base de menor tamaño del trapecio
+ * @param altura tamaño en cm de la altura del trapecio
+ * @returns ((bmayor+bmenor)/2)*altura
+ * @author 2213026541
+ */
+float trapecio(const float& bmayor, const float& bmenor, const float& altura);
+
+/** @brief Calcula el area de un triangulo 
+ * @param base tamaño en cm de la base del triangulo
+ * @param altura distancia en cm de la altura del triangulo 
+ * @returns (base*altura)/2
+ * @author 2213026176
+ */
+float triangulo(const float& base,const float& altura);
+
+#endif 

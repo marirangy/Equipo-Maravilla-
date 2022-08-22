@@ -21,6 +21,8 @@ g++ -c .\prelib\triangulo.cc -o .\objetos_estatica\triangulo.o -I .\biblioteca
 ar crs areas.lib .\objetos_estatica\*.o
 
 
+
+
 BIBLIOTECA DINÁMICA
 Tutorial para usal la biblioteca dinámica:
 1-. Clonar el repositorio 

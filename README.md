@@ -1,46 +1,42 @@
 # Equipo-Maravilla-
-Evaluacion:
-Monica Betsabe Mejia Escutia.
-Jose Alberto Posadas Gudiño.
-Mariana Rangel Angeles.
-La calificacion asignada a mis compañeros y la mia es 6, ya que no concluimos el trabajo completo de creear las bibliotecas,solo terminamos la biblioteca estatica que si funciona,en la biblioteca dinamica hicimos lo que se pudo, pero realmente todos nos esforzamos en aprender, entender y hacer el mayor trabajo posible. 
 
-
-
+BIBLIOTECA ESTÁTICA
 Tutorial para usar la biblioteca estática:
 1-. Clonar el repositorio 
-2-. Compila el código fuente ejecutando el comando g++ main.cc -o test -I.\lib\biblioteca -L.\static -lareas 
-3-. Ejecuta el programa, en el archivo main se encuentran las variables “x, y, z” que se pueden modificar con los valores que desees. 
-4-. Ejecutar el comando ./text.exc
+2-. Crea el ejecutable ingresando en la terminal el comando: g++ .\B_poligonos\main.cc -o .\B_poligonos\prueba.exe -I .\B_poligonos\biblioteca -L .\B_poligonos\lib\estatica -lareas
+3. Compila el ejecutable usando:.\B_poligonos\prueba.exe
+
+NOTA: "prueba.exe" es el nombre del ejecutable por lo que puede cambiar a cualquier otro nombre de su preferencia. 
+
+Comandos utilizados para compilar la biblioteca estática:
+1. Creación de archivos .o
+g++ -c .\prelib\cuadrado.cc -o .\objetos_estatica\cuadrado.o -I .\biblioteca
+g++ -c .\prelib\poligono.cc -o .\objetos_estatica\poligono.o -I .\biblioteca
+g++ -c .\prelib\rectangulo.cc -o .\objetos_estatica\rectangulo.o -I .\biblioteca
+g++ -c .\prelib\rombo.cc -o .\objetos_estatica\rombo.o -I .\biblioteca
+g++ -c .\prelib\trapecio.cc -o .\objetos_estatica\trapecio.o -I .\biblioteca
+g++ -c .\prelib\triangulo.cc -o .\objetos_estatica\triangulo.o -I .\biblioteca 
+
+2. Compilación de la biblioteca con extencion .lib
+ar crs areas.lib .\objetos_estatica\*.o
 
 
+BIBLIOTECA DINÁMICA
+Tutorial para usal la biblioteca dinámica:
+1-. Clonar el repositorio 
+2-. Crea el ejecutable ingresando en la terminal el comando: g++ .\B_poligonos\main.cc .\B_poligonos\lib\dinamica\areas.dll -o .\B_poligonos\lib\dinamica\prueba.exe
+3. Compila el ejecutable usando:.\B_poligonos\lib\dinamica\prueba.exe
 
-Comandos para compilar la biblioteca estatica.
-Con ese comando se compilan los codigos objetos generando el ".o"
-.g++ -c .\prelib\triangulo.cc -o .\libo\triangulo.o -I .\biblioteca
-.g++ -c .\prelib\cuadrado.cc -o .\libo\cuadrado.o -I .\biblioteca
-.g++ -c .\prelib\poligono.cc -o .\libo\poligono.o -I .\biblioteca
-.g++ -c .\prelib\rombo.cc -o .\libo\rombo.o -I .\biblioteca
-.g++ -c .\prelib\trapecio.cc -o .\libo\trapecio.o -I .\biblioteca
+NOTA: "prueba.exe" es el nombre del ejecutable por lo que puede cambiar a cualquier otro nombre de su preferencia. 
 
-ar crs .\biblioteca\static\AREAS.lib .\libo\*.o Para crear el ".lib" donde junta todos los codigos objetos.
-g++ main.cc -o test -I .\lib\biblioteca -L .\lib\static -lareas para generar el ejecutable. 
+Comandos utilizados para compilar la biblioteca dinámica:
+1. Creacion archivos .o con -FPIC
+g++ -c .\prelib\cuadrado.cc -o .\objetos_dinamica\cuadrado.o -I .\biblioteca -FPIC
+g++ -c .\prelib\poligono.cc -o .\objetos_dinamica\poligono.o -I .\biblioteca -FPIC
+g++ -c .\prelib\rectangulo.cc -o .\objetos_dinamica\rectangulo.o -I .\biblioteca -FPIC
+g++ -c .\prelib\rombo.cc -o .\objetos_dinamica\rombo.o -I .\biblioteca -FPIC
+g++ -c .\prelib\trapecio.cc -o .\objetos_dinamica\trapecio.o -I .\biblioteca -FPIC
+g++ -c .\prelib\triangulo.cc -o .\objetos_dinamica\triangulo.o -I .\biblioteca -FPIC
 
-
-
-
-Tutorial para usar la biblioteca dinamica:
-No se supo incluir el .dll en la funcion main, por lo tanto no supimos como generar el ejecutable.
-
-Comandos para compilar la biblioteca dinamica.
-Con ese comando se compilan los codigos objetos generando el ".o"
-gcc -c .\funciones\triangulo.cc -o .\librerias.o\triangulo.o -I .\biblio -fPIC
-gcc -c .\funciones\cuadrado.cc -o .\librerias.o\cuadrado.o -I .\biblio -fPIC
-gcc -c .\funciones\rectangulo.cc -o .\librerias.o\rectangulo.o -I .\biblio -fPIC
-gcc -c .\funciones\romboo.cc -o .\librerias.o\rombo.o -I .\biblio -fPIC
-gcc -c .\funciones\rombo.cc -o .\librerias.o\rombo.o -I .\biblio -fPIC
-gcc -c .\funciones\poligono.cc -o .\librerias.o\poligono.o -I .\biblio -fPIC
-gcc -c .\funciones\trapecio.cc -o .\librerias.o\trapecio.o -I .\biblio -fPIC
-
-
- gcc -shared .\librerias.o\*.o -o areas_poligonos.dll para generar el ".dll"
+2. Creación del DLL
+gcc -shared .\objetos_dinamica\*.o -o areas.dll 
